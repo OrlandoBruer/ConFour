@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -53,10 +55,8 @@ public class Game {
 		//File settingsFile = new File("./settings.txt");
 		try {
 			File settingsFile = new File("ConFour/settings.txt");
-			String settingsFilePath = settingsFile.getAbsolutePath();
 			FileReader fileReader = new FileReader(settingsFile);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			System.out.println(settingsFilePath);
 			String lineIterator;
 			try {
 				lineIterator = bufferedReader.readLine();
@@ -121,11 +121,19 @@ public class Game {
 
 		window.add(panel);
 		
+		JLabel iconTest;
 		
+
+		ImageIcon borderIcon = new ImageIcon("ConFour/border.png");
+		iconTest = new JLabel(borderIcon);
 		b1 = new JButton("Button");
+		//b1.setIcon
 		panel.add(b1);
+
+		//panel.add(iconTest);
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setLayout(null);
 		window.setResizable(false);
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
@@ -137,14 +145,28 @@ public class Game {
 		} catch (IOException e) {
 			System.out.println("Unable to find border.png file");
 		}
-
+		
+		window.add(iconTest);
+		iconTest.setBounds(0, 0, 40, 40);
 		Graphics graphic = panel.getGraphics();
 		graphic.drawImage(border, 100, 100,null);
+		//graphic.drawImage(iconTest,150,150,null);
+		window.getContentPane();
+	//	graphic.drawImage
 	
-		panel.repaint();
 	}
-	
 
+	/*Receives a player's move and returns a value based on the state of the board
+	 * 0: successful move
+	 * 1: invalid move
+	 * 2: victory
+	 * 3: draw
+	 */
+	int sendMove(int xPos, char colour) {
+		
+		
+		return 0;
+	}
 		
 
 		
