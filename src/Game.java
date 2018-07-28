@@ -155,9 +155,17 @@ public class Game {
 	//	graphic.drawImage
 	
 	}
-	
-	int sendMove(int x, int y, char colour) {
+
+	/*Receives a player's move and returns a value based on the state of the board
+	 * 0: successful move
+	 * 1: invalid move
+	 * 2: victory
+	 * 3: draw
+	 */
+	int sendMove(int xPos, char colour) {
 		
+		
+		return 0;
 	}
 		
 
